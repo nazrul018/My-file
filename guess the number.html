@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #head1{
+        color: green;
+        margin: 10px 0 3px;
+        font-size: 20px;
+      }
+
+      #display{
+        display: flex;
+        justify-content: center;
+      }
+      #inputd{
+        width: 30%;
+        height: 80px;
+        text-align: center;
+        background: yellow;
+        color: black;
+        font-size: 70px;
+        appearance: textfield;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      #totalnumber{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+        gap: 2%;
+        row-gap: 10px;
+        column-gap: 10px;
+        margin: 10px 5% 0;
+        
+      }
+      #totalnumber button{
+        padding: 10px;
+        background: rgb(159, 158, 158);
+        border: 1px solid rgb(159, 158, 158);
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        font-size: 18px;
+      }
+      #cl{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+      }
+      #clicki{
+        padding: 10px;
+        background: rgb(90, 161, 227);
+        border: 1px solid rgb(90, 161, 227);;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      #msg{
+        color: red;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      #msg2{
+        margin: 5px;
+        font-size: 20px;
+      }
+      #total{
+        padding: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #history{
+        padding: 5px;
+      }
+      footer{
+        display: flex;
+        justify-content: center;
+      }
+      #madeBy{
+        position: fixed;
+        bottom: 10px;
+        color: rgba(0, 0, 0, 0.4);
+        /* border: 1px solid rgba(0, 0, 0, 0.4); */
+      }
+   
+     
+    </style>
+    
+</head>
+<body>
+    <div id="game">
+      <h1 id ="head1">(Guess any nuber from 1 to 100) </h1>
+        
+        <input id="inputd" type="number">
+        
+        <p id="msg">.</p>
+        <p id="msg2">.</p>
+          <button id="clicki">Submit</button>
+        
+        
+        <p id="history">Previous Game: </p>
+        <p id="total">Your Attempts : <span id="totalTry">0</span></p>
+        <div class="states">❄Best Score: <span id="bestScore">--</span></div>
+
+        <div id="totalnumber">
+        <button onclick="inputd.value += '1' ">1</button>
+        <button onclick="inputd.value += '2' ">2</button>
+        <button onclick="inputd.value += '3' ">3</button>
+        <button onclick="inputd.value += '4' ">4</button>
+        <button onclick="inputd.value += '5' ">5</button>
+        <button onclick="inputd.value += '6' ">6</button>
+        <button onclick="inputd.value += '7' ">7</button>
+        <button onclick="inputd.value += '8' ">8</button>
+        <button onclick="inputd.value += '9' ">9</button>
+        <button id="newBtn">new</button>
+        <button onclick="inputd.value += '0' ">0</button>
+        <button onclick="inputd.value = inputd.value.toString().slice(0,-1) ">CE</button>
+        </div>
+        </div>
+        <footer>
+        <div id="madeBy"><p>Made by 
+          Syed Nazrul islam, 01842268224
+        </p></div>
+        </footer> 
+    
+    <script>
+      
+      let thinkNumber;
+      let attempts;
+      let history =[];
+      
+      const inputNumber = document.getElementById('inputd');
+      const msg = document.getElementById('msg');
+       const msg2 = document.getElementById('msg2');
+      const submit = document.getElementById('totalTry');
+      const historyText = document.getElementById('history');
+      const bestScoreText = document.getElementById('bestScore');
+      const guessBtn = document.getElementById('clicki');
+
+      
+
+      function loadBestScore (){
+        let best  = localStorage.getItem('bestScore');
+
+        if (best){
+          bestScoreText.textContent= best;
+        }else{
+          bestScoreText.textContent = '--';
+        }
+      }
+
+      function startGame(){
+        thinkNumber = Math.floor(Math.random()*100)+1;
+        attempts = 0;
+        history = [];
+
+        submit.textContent='0';
+        msg.textContent ='';
+        historyText.textContent = 'Previous Guesses:';
+        inputNumber.value= '';
+
+        inputNumber.disabled = false;
+        guessBtn.disabled = false;
+      }
+
+      function endGame(){
+        inputNumber.disabled = true;
+        guessBtn.disabled = true;
+        
+      }
+
+       
+       function checkGuess(){
+          const guessN = Number(inputNumber.value);
+
+          if (!guessN || guessN <1 || guessN > 100) {
+            msg.textContent = '1 theke 100 er modde digit likhun';
+            return;
+          }
+
+        attempts++;
+        submit.textContent= attempts;
+
+        history.push(guessN);
+        historyText.textContent= 'Previous Guesses:' + history.join(',');
+
+          if (guessN === thinkNumber){
+            msg.textContent = `🏆YOU Win. (This digit is: ${thinkNumber})`;
+            msg2.textContent = `you did it in your ${attempts} attempts.`;
+
+            let best = localStorage.getItem('bestScore');
+            if(!best ||attempts < best){
+              localStorage.setItem('bestScore', attempts);
+              bestScoreText.textContent = attempts;
+            }
+            endGame();
+            return;
+          }
+
+          if(guessN > thinkNumber){
+            msg.textContent = ' 💹 too high';
+          }else{
+            msg.textContent ='📉 too low';
+          }
+          // inputNumber.value = '';
+
+          if (attempts >= 10){
+            msg.textContent = 'Game over';
+            endGame();
+          }
+          inputNumber.value ='';
+        }
+       
+        
+        guessBtn.addEventListener('click', checkGuess);
+
+        inputNumber.addEventListener('keydown', function(event){
+          if (event.key === 'Enter'){
+            checkGuess();
+          }
+        });
+
+        document.getElementById('newBtn').addEventListener('click', startGame);
+        loadBestScore();
+        startGame();
+        
+        // document.getElementById('newBtn').addEventListener('click', ()=>{
+        //   thinkNumber = Math.floor(Math.random()*100)+1;
+        //   attempts=0;
+        //   inputNumber.value = '';
+        //   msg.textContent = '';
+        //   submit.textContent = '';
+        // });
+
+
+  </script>
+</body>
+</html>

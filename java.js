@@ -2,6 +2,7 @@
 // // console.log('hlw');
 
 // // document.getElementById('title').innerHTML = 'hello world';
+// jog kora/ addition-
 // // let sum = 50+70;
 // // console.log(sum);
 

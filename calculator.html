@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            background: black;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+        .calculator{
+            width: 100%;
+            max-width: 360px;
+            background: rgb(56, 55, 55);
+            padding: 10px;
+            border-radius: 10px;
+            height: 100%;
+            margin: 2px;
+        }
+        .calculator .display{
+            display: block;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        .calculator .display p{
+            font-size: 15px;
+            padding: 0px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #8a8686;
+            line-height: 0%;
+        }
+        .calculator .display input{
+            margin: 0px;
+            text-align: right;
+            width: 100%;
+            height: 60px;
+            flex: 1;
+            font-size: 2rem;
+            box-shadow: none;
+            border-style: none;
+        }
+        .button div{
+            display: flex;
+            justify-content: space-between;
+        }
+        .button{
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 1.5%;
+            margin-bottom: 30px;
+        }
+        .calculator .button input{
+            padding: 13px 0;
+            font-size: 1.5rem;
+            border: none;
+            transition: background 0.2s;
+            background: rgb(219, 219, 219);
+            width: 18%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow:-8px -8px 15px  rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+            color: #000000;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .calculator .button input:hover{
+            background: #727272;
+            color: white;
+        }
+        .calculator .ac{
+            color: red;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form action="">
+                <div class="display">
+                    <p>Made by Nazrul Islam</p><br>
+                    <p>01842268224</p><br>
+                    <input type="text" name="display"><br>
+                    <input class="result" type="text" name="result" id="">
+                </div>
+        <div class="button">
+                 <div>
+                    <input type="button" value="(" onclick="display.value += '(' ">
+                    <input type="button" value=")" onclick="display.value += ')' ">
+                    <input type="button" value="x^2" onclick="display.value = display.value * display.value ">
+                    <input type="button" value="%" onclick="result.value = result.value/100 ">
+                </div>
+                <div>
+                    <input class="ac" type="button" value="AC"  onclick="display.value = '', result.value='' ">
+                    <input type="button" value="CE" onclick="display.value = '',result.value = '' ">
+                    <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
+
+                    <input type="button" value="/" onclick="display.value += '/' ">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="display.value += '7' ">
+                    <input type="button" value="8" onclick="display.value += '8' ">
+                    <input type="button" value="9" onclick="display.value += '9' ">
+                    <input type="button" value="*" onclick="display.value += '*' ">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="display.value += '4' ">
+                    <input type="button" value="5" onclick="display.value += '5' ">
+                    <input type="button" value="6" onclick="display.value += '6' ">
+                    <input type="button" value="-" onclick="display.value += '-' ">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="display.value += '1' ">
+                    <input type="button" value="2" onclick="display.value += '2' ">
+                    <input type="button" value="3" onclick="display.value += '3' ">
+                    <input type="button" value="+" onclick="display.value += '+' ">
+                </div>
+                <div>
+                    <input type="button" value="0" onclick="display.value += '0' ">
+                    <input type="button" value="00" onclick="display.value += '00' ">
+                    <input type="button" value="." onclick="display.value += '.' ">
+                    <input type="button" value="=" onclick="result.value = eval(display.value) ">
+                </div>
+        </div>    
+            </form>
+        </div>
+    </div>
+</body>
+</html>

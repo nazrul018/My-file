@@ -1,0 +1,96 @@
+*{
+    background: #dddddd; margin: 0px; 
+}
+
+/*
+background-attachment: fixed for fixed
+this is css comment(comment render hoina)
+h1=selector
+color= property
+red=value
+total input=decleration
+margin: 0 auto; dile center a jabe 
+max-width and min-width use for device perfect show.
+top, left, over etc use for overlap
+
+*/
+body{margin: 50px; }
+.h1{color: rgb(220, 6, 6); font-size: 60px}
+.p1{color: blue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: justify;}
+.div1{height: auto; width: 400px; border: 3px; background-image: url(bg3.jpg); opacity: 0.7; text-align: justify; padding: 50px; margin: 20px auto;}
+.div3{background-image: url(pic1.JPG); background-size: 120px 150px; background-repeat: no-repeat; background-position: center;}
+.div2{border: 2px; height: auto; width: 400px; background-color: black; background-image: url(pic1.JPG, height:100px, width:100px); center; color: antiquewhite;}
+.pre1{text-align: center; border: 2px solid #aaaaaa; color: black; background-color: rgba(255, 255, 0, 0.2); width: 400px; height: auto;}
+.circle1, .circle2,.circle3, .circle4{height: 50px; width: 50px; border-radius: 50%; text-align: center; background-color: oklch(31.998% 0.07525 39.058); opacity:0.5; float: inline-end;}
+.div4{ background: #aaaaaa; color: red; width: 95%; padding: 4%;}
+.div5, .div6{background: yellow; margin: 1%; padding: 3%; width: 96%;}
+.main{display: flex; gap: 1rem; border: 2px solid black; 
+    padding: 1rem;}
+.main:hover{background: yellow;}/*its work for color when mouse pointer over here*/
+
+.main .box1{background: blue; padding: 4rem; width: 48%;}
+.main .box2{background: red; padding: 4rem; width: 48%;}
+.diva{color: green; padding: 2px; background: yellowgreen; margin: 3px; border: 3px solid black;}
+.main1{background:rgb(243, 227, 3); border: 2px solid black;}
+.p2{text-align: justify; text-align-last: center ;}
+.a1{color: black; text-decoration: none; }
+.a1:visited{ color: rgb(151, 246, 68);}
+.test1:hover{color: red;}
+.test2:active{color: green; font-weight: bold;}
+.test3:focus{color: blue; font-size: 20px; background: yellow; padding: 10px;}
+.test4{text-decoration: none; background: red; color: white; display: inline-block; padding: 6px 15px; font-family: sans-serif; border-radius: 35px; border: 2px solid red;}
+.test4:hover{ background: rgb(173, 255, 47); border: black ;}
+.list{ list-style-type: square; background: purple; border: 1px solid black;}
+.list li{background: yellow; padding: 4px; border: 1px solid black;}
+table,th,td{border: 2px solid black; border-collapse: collapse; padding: 10px;text-align: center;}
+table{width: 100%;}
+th{background: plum; color: red;}
+.td1{background: plum;}
+.span{background: yellow; color: red;}
+.p3{text-decoration: none; font-family: sans-serif; background: rgb(44, 82, 249); color: white; padding: 3px 9px; display: inline-block; border-radius: 5px; border: 3px solid rgb(44, 82, 249) ; font-size: 13px;}
+.span1{border: 3px solid #eaeae9cb; background: #eaeae9cb; padding: 3px 9px; border-radius: 5px; font-size: 13px; font-family: sans-serif;}
+.s1 { word-spacing : 4px;}
+.div7{ background: greenyellow; width: 500px; height: 200px; position: relative; top: 50px;margin: 0; }
+.div8{background: rgb(255, 47, 47); width: 200px; height: 200px; position: relative;}
+.div9{ background: blueviolet; height: 100px; width: 100px; position: absolute; margin: 25%; }
+.icon{position: fixed; right: 10px; top: 80px;}
+.divi{width:100%; height: 35px; background:rgb(255, 255, 255); position: sticky; top:5px; left:auto; margin: 0PX; display: inline-block;}
+.bar{display: inline-block; background: white; text-align: center; margin-left: 13%; margin-right: auto; margin-top: 10px; }
+.z{height: 300px; width: 300px; background: rgba(255, 0, 0, 0.772); position: absolute; display: block; z-index: 6; }
+.z2{height: 200px; width: 200px; background: rgba(0, 0, 255, 0.432); margin: 10%; position: absolute;
+    display: block;  z-index: 4;}
+.z4{height: 100px; width: 100px; background: rgb(0, 0, 5); margin: 20%; 
+ position: absolute; z-index: 3; display: block;}
+ .hr{background: red; width: 100%; height: 20px; margin-bottom: 300px;} 
+ .float{float: right; padding-left: 15px;}
+ .floatp{text-align: justify;}
+ .overflow{background: greenyellow; height: 150px; width:250px; padding: 5px; overflow: auto; margin: 0 40px 15px;}
+ .overflow2{background: greenyellow; height: 150px; width:250px; padding: 5px; overflow: auto; border: 2px solid black;}
+ .combinator p{ color: green; font-weight: bold; padding: 15px; font-family: sans-serif;}
+ .combinator > p{ background-color: yellow;}
+ .combinator + p{background: red;}
+ section p{ background: blue;}
+ .section + p{color: rgb(142, 1, 1);}
+ /* .combinator ~ p{ color: plum;} ~ use for select all p after div*/
+ .ul1 li:first-child{color: red;}
+ .ul1 li:last-child{color: red;font-weight: bold; }
+ .ul1 li:nth-child(3){color: rgb(28, 28, 249); font-weight: bolder;}
+ .p5::first-line{color: green; font-weight: bold; font-size: 15px;}
+ .p5::first-letter{font-size:30px;}
+ .p5{color: black;}
+ .p5::selection{background: yellow;}
+ .img1{height: 100px; width: 100px; opacity: 0.66;}
+ .img1:hover{opacity: 1;}
+ .tile1{background-color: blue; display: inline-block; border: 1px solid blue;}
+ .a1{background-color: blue; color: white; text-align: center; padding: 4px; display: inline-block; text-decoration: none;}
+ .menu1{display: block; }
+ .menu1 .dro{ list-style: none; display: inline-block; background: rgb(128, 6, 111);}
+ .menu1 .dro li{ display: inline-block; color: red; font-size: 13px; }
+ .dropd{display: none;}
+.para, .pari{color: red; font-weight: bold;}
+#box-sizing p{height: 200px; width: 200px; border: 1px solid black; background: yellow; color: red; padding: 4px; font-weight: bold; text-align: justify; font-size: 20px;}
+#box-sizing p::first-line{padding-bottom: 20px; color: green;}
+.transition{background: green; border: 1px solid black; height: 100px; width: 100px; color: white; transition: height 0.5s, width 3s;}
+.transition:hover{ height: 150px; width: 200px;}
+.transform{border: 1px solid black; background: red; height: 200px; width: 200px;}
+.transform:hover{transform: translate(25px, 20px); }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro</title>
+    <link rel="shortcut icon" href="prothomalo logo.png" type="image/x-icon">
+</head>
+<style>
+    :root{
+        --primary: #ff0000;
+        --sec: #ddff00;
+        --tar: #fff;
+        --bag: #aaaaff;
+
+    }
+    *{
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .header{
+        background: var(--primary);
+        text-align: center;
+        color: var(--tar);
+    }
+    .main{
+        display: flex;
+        background: var(--bag);
+        flex-wrap: wrap;
+        width: 98%;
+        justify-content: space-evenly;  
+
+    }
+    .main2{
+        text-align: center;
+        background: var(--primary);
+        flex-basis: 28%;
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid black;
+        padding-bottom: 20px;
+        border-radius: 10px;
+    }
+    .main2:nth-child(2){
+        order: 5;
+        /* flex-grow:1;  */
+    }
+    .main2 p{
+        color: var(--tar);
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+    .main2 a{
+        background: var(--sec);
+        border-radius: 10px;
+        padding: 7px;
+        text-decoration: none;
+        color: var(--primary);
+    }
+        
+</style>
+<body>
+   <div class="header">
+    <h2>variable</h2>
+    </div>
+<div class="main">
+   <div class="main2">
+    <h3>1</h3>
+    <p>1Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ea, optio ipsa fugit quas reiciendis repellat? Ipsa nam nostrum est ratione quam. Modi, soluta! Nam autem tenetur distinctio mollitia!</p>
+    <a href=""; target="_blank">Read More</a>
+   </div>
+   <div class="main2">
+    <h3>2</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ea, optio ipsa fugit quas reiciendis repellat? Ipsa nam nostrum est ratione quam. Modi, soluta! Nam autem tenetur distinctio mollitia!</p>
+    <a href="">Read More</a>
+   </div>
+   <div class="main2">
+    <h3>3</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ea, optio ipsa fugit quas reiciendis repellat? Ipsa nam nostrum est ratione quam. Modi, soluta! Nam autem tenetur distinctio mollitia!</p>
+    <a href="">Read More</a>
+   </div>
+   <div class="main2">
+    <h3>4</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ea, optio ipsa fugit quas reiciendis repellat? Ipsa nam nostrum est ratione quam. Modi, soluta! Nam autem tenetur distinctio mollitia!</p>
+    <a href="">Read More</a>
+   </div>
+   <div class="main2">
+    <h3>5</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eum ea, optio ipsa fugit quas reiciendis repellat? Ipsa nam nostrum est ratione quam. Modi, soluta! Nam autem tenetur distinctio mollitia!</p>
+    <a href="">Read More</a>
+   </div>
+</div>
+
+</body>
+</html>
